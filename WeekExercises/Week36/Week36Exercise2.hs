@@ -17,10 +17,22 @@ semiRepetitive s =
 
 --2b)
 
-decomposeSemiRepetitive :: String -> Maybe (String, Maybe Char)
+getMidChar :: String -> Maybe Char
+getMidChar c
+    | odd len = Just (c !! middleCharacter)
+    where
+        len = length c
+        middleCharacter = (len - 1) `div` 2
 
+decomposeSemiRepetitive :: String -> Maybe (String, Maybe Char)
+decomposeSemiRepetitive s =
+    if even (length s) then 
+        Just (firstHalf s, Nothing)
+        else
+            Just (firstHalf s, getMidChar s)
 
 --2c)
+
 
 --CreateSemiRepetitive :: String -> Maybe Char -> String
 
