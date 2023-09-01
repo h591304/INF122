@@ -15,10 +15,10 @@ semiRepetitive s =
         else 
             Nothing
 
+
 --2b)
 
-decomposeSemiRepetitive :: String -> Maybe (String, Maybe Char)
-
+--decomposeSemiRepetitive :: String -> Maybe (String, Maybe Char)
 
 --2c)
 
