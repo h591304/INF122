@@ -33,6 +33,7 @@ decomposeSemiRepetitive s =
 
 --2c)
 
-
---CreateSemiRepetitive :: String -> Maybe Char -> String
+createSemiRepetitive :: String -> Maybe Char -> String 
+createSemiRepetitive s Nothing = s ++ s
+createSemiRepetitive s (Just c) = s ++ [c] ++ s
 
