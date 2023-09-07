@@ -18,11 +18,12 @@ semiRepetitive s =
 --2b)
 
 getMidChar :: String -> Maybe Char
-getMidChar c
-    | odd len = Just (c !! middleCharacter)
-    where
-        len = length c
-        middleCharacter = (len - 1) `div` 2
+getMidChar c =
+    let len = length c
+        midChar = (len - 1) `div` 2
+    in if odd len 
+        then Just (c !! midChar)
+        else Nothing
 
 decomposeSemiRepetitive :: String -> Maybe (String, Maybe Char)
 decomposeSemiRepetitive s =
