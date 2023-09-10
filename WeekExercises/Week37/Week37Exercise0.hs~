@@ -1,4 +1,0 @@
-module Week37Exercise0 where
-
-information :: [String]	-> [String] -> [Integer] -> [String]
-information [name] [insName] [year] = zip3 $ [name] ++ [insName] ++ show ([year])
