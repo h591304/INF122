@@ -84,3 +84,12 @@ solarSystem =
             }
         ]
     }
+
+-- a) implement numberOfMoons
+numberOfMoons :: PlanetarySystem -> Integer
+numberOfMoons planetSystem = sum $ map (toInteger . length . moons) $ planets planetSystem
+
+-- b) implement atLeastOneMoon
+atLeastOneMoon :: PlanetarySystem -> [Planet]
+atLeastOneMoon planetSystem = filter (not . null . moons) $ planets planetSystem 
+

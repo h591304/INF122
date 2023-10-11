@@ -2,7 +2,7 @@ module Week40Exercise0 where
 
 type SemiRepetitive = (String, Maybe Char)
 
--- 1a) implement semiRepetitive
+-- a) implement semiRepetitive
 semiRepetitive :: String -> Maybe SemiRepetitive
 semiRepetitive str =
     let first = firstHalf str
@@ -21,7 +21,7 @@ firstHalf str = take (length str `div` 2) str
 secondHalf :: String -> String
 secondHalf str = drop ((length str + 1) `div` 2) str
 
--- 1b) implement toString
+-- b) implement toString
 toString :: SemiRepetitive -> String
 toString (a, b) = case b of
     Nothing -> a ++ a
