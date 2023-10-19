@@ -9,3 +9,14 @@ data Expr variable
   | And (Expr variable) (Expr variable)
   | Or (Expr variable) (Expr variable)
   deriving (Eq, Show)
+
+eval :: (Ord variable) => Expr variable -> Map variable Bool -> Maybe Bool
+eval (Var v) vMap = Map.lookup v vMap
+eval (Lit b) _ = Just b
+eval (And e1 e2) vMap
+    | Just v1 <- eval e1 vMap, Just v2 <- eval e2 vMap = Just (v1 && v2)
+    | otherwise = Nothing 
+
+eval (Or e1 e2) vMap
+    | Just v1 <- eval e1 vMap, Just v2 <- eval e2 vMap = Just (v1 || v2)
+    | otherwise = Nothing 
